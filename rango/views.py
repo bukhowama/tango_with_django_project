@@ -16,7 +16,10 @@ def index(request):
     pages_list = Page.objects.order_by('-views')[:5]
 
     context_dict = {'categories': category_list, 'pages': pages_list}
-    # Render the response and send it back!
+    # prints out whether the method is a GET or a POST
+    print(request.method)
+    # prints out the user name, if no one is logged in it prints `AnonymousUser`
+    print(request.user)
     return render(request, 'rango/index.html', context_dict)
 
 

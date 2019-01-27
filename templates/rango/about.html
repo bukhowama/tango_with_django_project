@@ -1,3 +1,25 @@
+{% extends 'rango/base.html' %}
+{% load staticfiles %}
+
+{% block title_block %}
+	About
+{% endblock %}
+
+
+{% block body_block %}
+		<h1>About page says...</h1>
+		<div>
+			hey there partner! <br />
+
+		</div>
+		<div>
+			<img src="{{ MEDIA_URL}}cat.jpg" />
+			<img src="{% static "images/about.jpg" %}" alt="About Pic" />
+
+		</div>
+{% endblock %}
+
+<!--
 <!DOCTYPE html>
 {% load staticfiles %}
 <html>

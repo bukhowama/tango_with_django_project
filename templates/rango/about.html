@@ -10,28 +10,13 @@
 		<h1>About page says...</h1>
 		<div>
 			hey there partner! <br />
+			<strong>{{ aboutme }}</strong><br />
 
 		</div>
 		<div>
+			<p>You have visited :{{ visits }} times.</p>
 			<img src="{{ MEDIA_URL}}cat.jpg" />
 			<img src="{% static "images/about.jpg" %}" alt="About Pic" />
 
 		</div>
 {% endblock %}
-
-<!--
-<!DOCTYPE html>
-{% load staticfiles %}
-<html>
-	<head>
-	</head>
-	<body>
-		<div>
-			{{ message }}<br />
-		</div>
-		<div>
-			<img src="{{ MEDIA_URL}}cat.jpg" />
-			<a href="/rango/index">Index</a><br />
-		</div>
-	</body>
-</html>

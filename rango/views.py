@@ -121,11 +121,11 @@ def register(request):
 
                 profile.picture = request.FILES['picture']
 
-                profile.save()
+            profile.save()
 
-                registered = True
+            registered = True
 
-            else:
+        else:
 
                 print(user_form.errors, profile_form.errors)
 

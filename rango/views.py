@@ -238,7 +238,7 @@ def visitor_cookie_handler(request):
     visits = int(request.COOKIES.get('visits', '1'))
 
     last_visit_cookie = request.COOKIES.get('last_visit', str(datetime.now()))
-    last_visit_time = datetime.strptime(last_visit_cookie[:7], '%Y-%m-%d %H:%M:%S')
+    last_visit_time = datetime.strptime(last_visit_cookie[:-7], '%Y-%m-%d %H:%M:%S')
 
     # If it's been more than a day since the last visit...
     if (datetime.now() - last_visit_time).days > 0:
@@ -247,7 +247,7 @@ def visitor_cookie_handler(request):
         request.session['last_visit'] = str(datetime.now())
     else:
         # Set the last visit cookie
-        request.sessions['visit'] = last_visit_cookie
+        request.session['visit'] = last_visit_cookie
     # Update/set the visits cookie
     request.session['visits'] = visits
 

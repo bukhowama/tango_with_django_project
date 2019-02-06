@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 {% extends 'rango/base.html' %}
 {% load staticfiles %}
 
@@ -7,16 +8,12 @@
 
 
 {% block body_block %}
-		<h1>About page says...</h1>
+		<h1>About</h1>
+		<p>This tutorial has been put together by {{myname}}</p>
 		<div>
-			hey there partner! <br />
-			<strong>{{ aboutme }}</strong><br />
-
+			<img src="{{ MEDIA_URL}}cat.jpg" alt="About Pic" />
+			<br>
 		</div>
-		<div>
-			<p>You have visited :{{ visits }} times.</p>
-			<img src="{{ MEDIA_URL}}cat.jpg" />
-			<img src="{% static "images/about.jpg" %}" alt="About Pic" />
+		<p>You have visited :{{ visits }} times.</p>
 
-		</div>
 {% endblock %}
